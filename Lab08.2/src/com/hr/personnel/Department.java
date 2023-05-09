@@ -26,7 +26,7 @@ public class Department {
     // fields
     private String name;
     private String location;
-    private Employee[] employees = new Employee[100];
+    private final Employee[] employees = new Employee[100];
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
@@ -52,7 +52,19 @@ public class Department {
             employees[i].work();
         }
     }
-
+    //Forced holiday break. For all employee that are salaried, make them take vacation
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            //if employees [i] is a salaried employee object,
+            // then downcast the employee reference to specific type
+            //note, we must check the correct type before downcast, otherwise compile errors
+            //instance of is an IS-A check
+            if (employees[i] instanceof SalariedEmployee){
+                SalariedEmployee semp = (SalariedEmployee) employees [i];
+                semp.takeVacation();
+            }
+        }
+    }
     public void payEmployees() {
         for (int i = 0; i < currentIndex; i++) {
             employees[i].pay();
@@ -63,7 +75,6 @@ public class Department {
     public void addEmployee(Employee emp) { //emp is a reference of an object
         employees[currentIndex++] = emp;
     }
-
 
     // accessor methods
     public String getName() {
