@@ -5,7 +5,7 @@ import gov.irs.TaxPayer;
 import java.time.LocalDate;
 
 public class SalariedEmployee extends Employee {
-    //instance vairables
+    //instance variables
     private double salary;
 
 
