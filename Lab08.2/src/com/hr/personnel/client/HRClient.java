@@ -26,8 +26,8 @@ class HRClient {
         System.out.println(dept);
 
         // add Employees to it
-        dept.addEmployee(new Employee("Jason", LocalDate.of(1990, 8, 24)));
-        dept.addEmployee(new Employee("Julie", LocalDate.of(2000, 2, 2)));
+        dept.addEmployee(new SalariedEmployee("Jason", LocalDate.of(1990, 8, 24), 1800.0));
+        dept.addEmployee(new HourlyEmployee("Julie", LocalDate.of(2000, 2, 2), 12.5, 50));
         dept.addEmployee(new SalariedEmployee("Jacob", LocalDate.of(2012,01,13), 1500.0));
         dept.addEmployee(new HourlyEmployee("Justin", LocalDate.of(1990,01,31), 35.0, 40));
 
